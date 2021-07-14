@@ -6,7 +6,7 @@ FEATURES += DISABLE_SHADOWSOCKS
 SRCS := $(OBJS:.o=.c)
 CONF := config.h
 DEPS := .depend
-OUT := redsocks2
+OUT := redsocks
 VERSION := 0.68
 OS := $(shell uname)
 
