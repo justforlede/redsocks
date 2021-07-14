@@ -10,7 +10,7 @@ OUT := redsocks
 VERSION := 0.68
 OS := $(shell uname)
 
-LIBS := -levent
+LIBS := -levent_core
 override CFLAGS += -D_BSD_SOURCE -D_DEFAULT_SOURCE -Wall
 ifeq ($(OS), Linux)
 override CFLAGS += -std=c99 -D_XOPEN_SOURCE=600
@@ -48,11 +48,11 @@ endif
 #override LIBS += -lssl -lcrypto -ldl
 #override CFLAGS += -DUSE_CRYPTO_OPENSSL
 #endif
-#ifdef ENABLE_STATIC
+ifdef ENABLE_STATIC
 override LIBS += -lz
 override LDFLAGS += -Wl,-static -static -static-libgcc -s
 override FEATURES += STATIC_COMPILE
-#endif
+endif
 
 all: $(OUT)
 
