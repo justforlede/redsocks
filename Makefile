@@ -48,11 +48,11 @@ endif
 #override LIBS += -lssl -lcrypto -ldl
 #override CFLAGS += -DUSE_CRYPTO_OPENSSL
 #endif
-ifdef ENABLE_STATIC
+#ifdef ENABLE_STATIC
 override LIBS += -lz
 override LDFLAGS += -Wl,-static -static -static-libgcc -s
 override FEATURES += STATIC_COMPILE
-endif
+#endif
 
 all: $(OUT)
 
